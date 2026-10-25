@@ -2,7 +2,7 @@
 
 Link the current note into a future daily note, with a date typed in plain English, so it comes back when you want to review it.
 
-![Typing a date in plain English to schedule a note with Revisit Later](docs/screenshot.png)
+![Typing a date in plain English to schedule a note with Revisit Later](https://raw.githubusercontent.com/perezamadorluisenrique-gif/revisit-later/main/docs/screenshot.png)
 
 Revisit Later puts a link to the note you are reading into a future daily note, under a heading you choose. When that day comes, the note is in your daily note, where you will see it. It is a tickler file for your vault, and a successor to [Review](https://github.com/ryanjamurphy/review-obsidian) that does not need another plugin to read dates and does not rewrite your daily note as a whole.
 
