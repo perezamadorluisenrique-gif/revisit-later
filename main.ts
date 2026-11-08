@@ -9,6 +9,7 @@ import { dailyNotePath, formatDate, parentFolder } from './src/format.ts';
 import type { FormatOptions } from './src/format.ts';
 import { applyChange, entries, formatEntry, parseHeading, planAppend } from './src/insert.ts';
 import { renderTemplate } from './src/template.ts';
+import { moreDefinitions, renderMore } from './src/more-link.ts';
 
 /** The parts of moment this plugin uses, typed here: the directory's review has no types for `moment`. */
 interface Moment {
@@ -442,6 +443,7 @@ class ReviewLaterSettingTab extends PluginSettingTab {
         heading: 'Interface',
         items: [{ ...TEXT.ribbon, control: { type: 'toggle', key: 'ribbon', defaultValue: d.ribbon } }],
       },
+      ...(moreDefinitions() as SettingDefinitionItem[]),
     ];
   }
 
@@ -481,6 +483,7 @@ class ReviewLaterSettingTab extends PluginSettingTab {
       );
     new Setting(containerEl).setName('Interface').setHeading();
     this.toggle('ribbon');
+    renderMore(this.containerEl, (el) => new Setting(el));
   }
 
   private text(key: 'heading' | 'linePrefix' | 'defaultDate') {
